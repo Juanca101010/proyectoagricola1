@@ -1,0 +1,31 @@
+{% load static %}
+	
+
+<html lang="en">
+<head>
+    <title>{% block titulo %}Ingresar{% endblock %}</title>
+    <link href="{% static 'app/css/estiloingresar.css' %}" rel="stylesheet">
+</head>
+<body>
+    
+  <div class="contenedor" >
+
+    <div class="header">
+  </div>
+  
+  <div class="contenido">
+    <form action="">
+      <span>Usuario:</span>
+      <input type="text" name="username">
+      <br>
+      <span>Password:</span>
+      <input type="password" name="password">
+      <br>
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+  <div class="footer">
+  </div>
+        </div>
+</body>
+</html>
