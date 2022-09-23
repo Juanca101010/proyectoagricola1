@@ -15,3 +15,5 @@ def index(request):
 
 def ingresar(request):
     return render(request, 'app/ingresar.html')
+def crearusuario(request):
+    return render(request, 'app/crearusuario.html')

@@ -1,0 +1,56 @@
+{% load static %}
+	
+
+<html lang="en">
+<head>
+    <title>{% block titulo %}Dashboard{% endblock %}</title>
+    <link href="{% static 'app/css/estilo_consultavotacion.css' %}" rel="stylesheet">
+</head>
+<body>
+    
+      <div class="contenedor" >
+
+        <div class="header">
+          <ul id="menu">
+            <li ><a href="{% url 'app:menu_estudiante' %}">Inicio</a></li>
+            <li><a href="{% url 'app:postularse' %}">Postularse</a></li>
+            <li><a href="{% url 'app:consult-estudiante' %}">Consultas</a></li> 
+            <li><a href="{% url 'app:ingresar' %}" id="profiles">Salir</a></li>
+            </ul>
+        </div>
+          
+            <div class="contenido">
+                <br>
+                <h3>Consulta lista de Votaciones</h2>
+                <br><br>
+                <br><br>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Nombre Votacion</th>
+                      <th>Ciclo</th>
+                      <th>Fecha de inicio</th>
+                      <th>Fecha finalización</th>
+                      <th>tipos de Votacion</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {%for lista22  in listade_votaciones2%}
+                    <tr class="fila"> 
+                      <td>{{lista22.nombre}}</td>
+                      <td>2022-1</td>
+                      <td>{{lista22.fechaInicio}}</td>
+                      <td>{{lista22.fechaFinal}}</td>
+                      <td>{{lista22.tipo_id}}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                        <br>
+          </div>
+              <div class="contenido2">
+                <img src="{% static 'app/image/Logotipo_USTA_Colombia.png' %}" alt="logo" width="100">              </div>
+              
+            </div>
+</body>
+</html>

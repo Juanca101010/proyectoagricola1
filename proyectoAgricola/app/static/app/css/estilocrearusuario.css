@@ -9,7 +9,7 @@ form {
     color: white;
     position: relative;
     left: 450px;
-    top: 140px;
+    top: 80px;
     background: #418f2da3;
     padding: 50px;
     width: 30%;
@@ -37,7 +37,6 @@ form>fieldset {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     list-style-type: none;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: #418F2D;
     height: 60px;
 }
