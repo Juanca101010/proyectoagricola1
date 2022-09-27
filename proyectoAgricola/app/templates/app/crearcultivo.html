@@ -1,0 +1,45 @@
+{% load static %}
+	
+
+<html lang="en">
+<head>
+    <title>{% block titulo %}Crear Cultivo{% endblock %}</title>
+    <link href="{% static 'app/css/estilocrearcultivo.css' %}" rel="stylesheet">
+</head>
+<body>
+    
+  <div class="contenedor" >
+
+    <div class="header">
+        <ul id="menu">
+            <li ><a href="{% url 'app:dashboard' %}">Cultivos</a></li>
+            <li ><a href="">Nuevo</a></li>
+            <li ><a href="">Monitorear</a></li>
+            <li ><a href="">Perfil</a></li>
+            </ul>
+  </div>
+  <div class="contenido">
+    <br><br>
+    <h2>Nuevo Cultivo</h2>
+    <br><br>
+    <form action="">
+      <h2>Nombre: </h2>
+      <input type="text" name="username">
+      <br><br>
+      <h2>Fecha: </h2>
+      <input type="date" name="text">
+      <br><br>
+      <h2>Localidad: </h2>
+      <input type="text" name="text">
+      <br><br>
+      <h3>Sensores: </h3>
+      <br>
+      <button type="submit">Crear</button>
+    </form>
+  </div>
+
+  <div class="footer">
+  </div>
+        </div>
+</body>
+</html>

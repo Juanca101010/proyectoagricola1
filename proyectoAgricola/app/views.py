@@ -15,5 +15,15 @@ def index(request):
 
 def ingresar(request):
     return render(request, 'app/ingresar.html')
+
 def crearusuario(request):
     return render(request, 'app/crearusuario.html')
+
+def dashboard(request):
+    return render(request, 'app/dashboard.html')
+
+def crearcultivo(request):
+    return render(request, 'app/crearcultivo.html')
+
+def datoscultivo(request):
+    return render(request, 'app/datoscultivo.html')

@@ -3,7 +3,7 @@
 
 <html lang="en">
 <head>
-    <title>{% block titulo %}Dashboard{% endblock %}</title>
+    <title>{% block titulo %}Datos Cultivo{% endblock %}</title>
     <link href="{% static 'app/css/estilodashboard.css' %}" rel="stylesheet">
 </head>
 <body>
@@ -21,28 +21,25 @@
           
             <div class="contenido">
               <br><br>
-              <h1>Dashboard</h1> 
-              <br>
-              <h2>Cultivos Actuales</h2>
+              <h1>Datos Cultivo</h1> 
                 <br><br>
                 <table>
                   <thead>
                     <tr>
-                      <th>Nombre</th>
-                      <th>Fecha</th>
-                      <th>Localidad</th>
-                      <th>Visualizar datos</th>
+                      <th>Estado Temperatura</th>
+                      <th>Estado Humedad</th>
+                      <th>Ver Camaras</th>
                     </tr>
                   </thead>
                   <tbody>
-
+                    {%for lista22  in listade_votaciones2%}
                     <tr class="fila"> 
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td>{{lista22.nombre}}</td>
+                      <td>2022-1</td>
+                      <td>{{lista22.fechaFinal}}</td>
                       <td><a href="{% url 'app:datoscultivo' %}"  class="cr">Consultar</a></td>
                     </tr>
-
+                    {% endfor %}
                   </tbody>
                 </table>
                         <br>
