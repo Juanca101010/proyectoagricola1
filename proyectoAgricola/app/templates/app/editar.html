@@ -1,0 +1,46 @@
+
+{% load static %}
+	
+
+<html lang="en">
+<head>
+    <title>{% block titulo %}Editar datos{% endblock %}</title>
+    <link href="{% static 'app/css/estilocrearcultivo.css' %}" rel="stylesheet">
+</head>
+<body>
+    
+  <div class="contenedor" >
+
+    <div class="header">
+        <ul id="menu">
+            <li ><a href="{% url 'app:dashboard' %}">Cultivos</a></li>
+            <li ><a href="{% url 'app:crearcultivo' %}">Nuevo</a></li>
+            <li ><a href="">Monitorear</a></li>
+            <li ><a href="">Perfil</a></li>
+            </ul>
+  </div>
+  <div class="contenido">
+    <br><br>
+    <h2>Cultivo</h2>
+    <BR></BR>
+    <h2>nombre</h2>
+    <br><br>
+    <form action="">
+      <h2>Configuración de riego (Tiempo)</h2>
+      <input type="time" name="tiempo">
+      <br><br>
+      <h2>Temperatura Max</h2>
+      <input type="number" name="tmax">
+      <br><br>
+      <h2>Temperatura Min</h2>
+      <input type="number" name="tmin">
+      <br><br>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+
+  <div class="footer">
+  </div>
+        </div>
+</body>
+</html>

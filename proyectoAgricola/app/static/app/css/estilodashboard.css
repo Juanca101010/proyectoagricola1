@@ -77,22 +77,11 @@ table,th,td {
 
 h3 { display:inline; }
 
-.cr{
-  text-decoration:none;
-font-weight: 600;
-font-size: 20px;
-color:#000000;
-padding-top:10px;
-padding-bottom:10px;
-padding-left:40px;
-padding-right:40px;
-background-color: F3D222;
-border-color: #000000;
-border-width: 3px;
-border-style: solid;
-border-radius:35px;
-
+a{
+  color: #418F2D;
+  padding: 50px;
 }
+
 select{
     background: #418F2D;
  color: white;

@@ -65,12 +65,9 @@ input {
     border-radius: 30px;
 }
 
-button {
-    color: #ffffff;
-    background-color: #418F2D;
-    border-radius: 30px;
-    padding: 10px;
-    border: none;
-}
 
+.cr{
+    background-color: #418F2D;
+    color: white    
+}
 

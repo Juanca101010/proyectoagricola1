@@ -29,17 +29,17 @@
                       <th>Estado Temperatura</th>
                       <th>Estado Humedad</th>
                       <th>Ver Camaras</th>
+                      <th>Configurar</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {%for lista22  in listade_votaciones2%}
+
                     <tr class="fila"> 
-                      <td>{{lista22.nombre}}</td>
-                      <td>2022-1</td>
-                      <td>{{lista22.fechaFinal}}</td>
-                      <td><a href="{% url 'app:datoscultivo' %}"  class="cr">Consultar</a></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href=""  class="buton">Ver</a></td>
+                        <td><a href="{% url 'app:editar' %}"  class="buton">Editar</a></td>
                     </tr>
-                    {% endfor %}
                   </tbody>
                 </table>
                         <br>

@@ -27,3 +27,6 @@ def crearcultivo(request):
 
 def datoscultivo(request):
     return render(request, 'app/datoscultivo.html')
+
+def editar(request):
+    return render(request, 'app/editar.html')
