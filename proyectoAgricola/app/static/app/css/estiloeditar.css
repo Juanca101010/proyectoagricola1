@@ -88,4 +88,19 @@ button {
     border: none;
 }
 
-
+table {
+    margin: auto;
+   }
+table,th,td {
+border: 2px solid black;
+border-collapse: collapse;
+padding: 20px 10px;
+text-align: center;
+}
+td {
+    cursor: pointer;
+  }
+  .fila:hover {
+    background: #c2c2c2;
+    color: #418F2D;
+}

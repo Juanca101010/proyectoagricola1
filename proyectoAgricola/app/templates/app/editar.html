@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <title>{% block titulo %}Editar datos{% endblock %}</title>
-    <link href="{% static 'app/css/estilocrearcultivo.css' %}" rel="stylesheet">
+    <link href="{% static 'app/css/estiloeditar.css' %}" rel="stylesheet">
 </head>
 <body>
     
@@ -15,20 +15,39 @@
         <ul id="menu">
             <li ><a href="{% url 'app:dashboard' %}">Cultivos</a></li>
             <li ><a href="{% url 'app:crearcultivo' %}">Nuevo</a></li>
-            <li ><a href="">Monitorear</a></li>
-            <li ><a href="">Perfil</a></li>
+            <li ><a href="{% url 'app:perfil' %}">Perfil</a></li>
             </ul>
   </div>
   <div class="contenido">
-    <br><br>
+    <br>
     <h2>Cultivo</h2>
-    <BR></BR>
-    <h2>nombre</h2>
-    <br><br>
+    <BR>
+    <h3>nombre #</h1>
+    <br>
     <form action="">
       <h2>Configuración de riego (Tiempo)</h2>
       <input type="time" name="tiempo">
       <br><br>
+      <table>
+        <thead>
+          <tr>
+            <th>Sensor</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="fila"> 
+            <td>Temperatura</td>
+            <td>Activo</td>
+          </tr>
+          <tr class="fila"> 
+            <td>Humedad</td>
+            <td>Activo</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <br>
       <h2>Temperatura Max</h2>
       <input type="number" name="tmax">
       <br><br>

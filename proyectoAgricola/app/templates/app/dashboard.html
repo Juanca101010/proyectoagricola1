@@ -14,8 +14,7 @@
           <ul id="menu">
             <li ><a href="{% url 'app:dashboard' %}">Cultivos</a></li>
             <li ><a href="{% url 'app:crearcultivo' %}">Nuevo</a></li>
-            <li ><a href="">Monitorear</a></li>
-            <li ><a href="">Perfil</a></li>
+            <li ><a href="{% url 'app:perfil' %}">Perfil</a></li>
             </ul>
         </div>
           
@@ -29,7 +28,7 @@
                   <thead>
                     <tr>
                       <th>Nombre</th>
-                      <th>Fecha</th>
+                      <th>Fecha creación</th>
                       <th>Localidad</th>
                       <th>Visualizar datos</th>
                     </tr>
@@ -37,9 +36,15 @@
                   <tbody>
 
                     <tr class="fila"> 
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td>cultivo 1</td>
+                      <td>202022</td>
+                      <td>funza</td>
+                      <td><a href="{% url 'app:datoscultivo' %}"  class="cr">Consultar</a></td>
+                    </tr>
+                    <tr class="fila"> 
+                      <td>cultivo 2</td>
+                      <td>202023</td>
+                      <td>madrid</td>
                       <td><a href="{% url 'app:datoscultivo' %}"  class="cr">Consultar</a></td>
                     </tr>
 

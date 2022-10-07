@@ -13,9 +13,8 @@
     <div class="header">
         <ul id="menu">
             <li ><a href="{% url 'app:dashboard' %}">Cultivos</a></li>
-            <li ><a href="">Nuevo</a></li>
-            <li ><a href="">Monitorear</a></li>
-            <li ><a href="">Perfil</a></li>
+            <li ><a href="{% url 'app:crearcultivo' %}">Nuevo</a></li>
+            <li ><a href="{% url 'app:perfil' %}">Perfil</a></li>
             </ul>
   </div>
   <div class="contenido">
@@ -33,6 +32,9 @@
       <input type="text" name="text">
       <br><br>
       <h3>Sensores: </h3>
+      <label><input type="checkbox" id="" value=""> Temperatura</label>
+      <label><input type="checkbox" id="" value=""> Humedad</label>
+      <br>
       <br>
       <button type="submit">Crear</button>
     </form>

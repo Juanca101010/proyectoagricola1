@@ -30,3 +30,6 @@ def datoscultivo(request):
 
 def editar(request):
     return render(request, 'app/editar.html')
+
+def perfil(request):
+    return render(request, 'app/perfil.html')
