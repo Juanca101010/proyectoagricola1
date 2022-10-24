@@ -21,19 +21,20 @@
     <br><br>
     <h2>Nuevo Cultivo</h2>
     <br><br>
-    <form action="">
+    <form action="{% url 'app:crearcultivo2' %}" method="POST" id="formu">
+      {% csrf_token %}
       <h2>Nombre: </h2>
-      <input type="text" name="username">
+      <input type="text" id="nombre1" name="nombre1">
       <br><br>
       <h2>Fecha: </h2>
-      <input type="date" name="text">
+      <input type="date" id="fecha" name="fecha">
       <br><br>
       <h2>Localidad: </h2>
-      <input type="text" name="text">
+      <input type="text" id="Localidad" name="Localidad">
       <br><br>
       <h3>Sensores: </h3>
-      <label><input type="checkbox" id="" value=""> Temperatura</label>
-      <label><input type="checkbox" id="" value=""> Humedad</label>
+      <label><input type="checkbox" name="sensort" id="sensort" value="1"> Temperatura</label>
+      <label><input type="checkbox" name="sensorh" id="sensorh" value="1"> Humedad</label>
       <br>
       <br>
       <button type="submit">Crear</button>

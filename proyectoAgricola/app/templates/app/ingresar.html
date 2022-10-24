@@ -15,17 +15,18 @@
   </div>
   
   <div class="contenido">
-    <form action="">
-      <h2>Usuario: </h2>
+    <form action="{% url 'app:autenticar' %}" method="post">
+      {% csrf_token %}
+      <span>Usuario:</span>
       <input type="text" name="username">
       <br>
-      <h2>Contraseña: </h2>
+      <span>Password:</span>
       <input type="password" name="password">
       <br>
-      <br>
+      <button type="submit">Ingresar</button>
       <a class="cr" href="{% url 'app:dashboard' %}">Ingresar</a> 
       <a class="cr" href="{% url 'app:crearusuario' %}" >Registrarce</a>
-    </form>
+      </form>
   </div>
 
   <div class="footer">
