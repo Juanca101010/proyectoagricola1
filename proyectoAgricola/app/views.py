@@ -19,13 +19,15 @@ def ingresar(request):
 
 
 def autenticar(request):
-    response_data={}
     # Obtiene los datos del formulario de autenticación
     username = request.POST['username']
     password = request.POST['password']
     # Obtiene el usuario
+    print(username,password)
+    a = User.objects.filter(Q(username=username) & Q(password=password))
+    print(a)
     usuario = authenticate(username=username, password=password)
-
+    print(usuario)
     # Verifica si el usuario existe en la base de datos
     
     if usuario is not None:
@@ -48,8 +50,8 @@ def crearusuario2(request):
         nombre = request.POST['nombre1']
         user = request.POST['username1']
         email2 = request.POST['email1']
-        pass2 = request.POST['pass1']
-        rpass2 = request.POST['rpass1']
+        pass2 = request.POST['pass']
+        rpass2 = request.POST['rpass']
 
         u = User()
         u.first_name = nombre
@@ -57,17 +59,25 @@ def crearusuario2(request):
         u.email = email2
         u.password = rpass2
         u.save()
+        print(u.id)
+
+        a = administrador()
+        a.numerocultivos = 0
+        a.user_id = u.id 
+        a.save()
 
         return redirect('app:ingresar')
     except Exception as e:
         print(e)
         return render(request,'app/ingresar.html')
 
+# def dashboard(request):
+#     print("HOSADSAD")
+#     return render(request, 'app/dashboard.html')
+
+
 def dashboard(request):
-    return render(request, 'app/dashboard.html')
-
-
-def dashboard2(request):
+    print("ADIOS")
     lista22 = cultivo.objects.all()
     print(lista22)
     contexto ={
@@ -101,10 +111,21 @@ def crearcultivo2(request):
         return render(request,'app/dashboard.html')
 
 def datoscultivo(request):
-    return render(request, 'app/datoscultivo.html')
+    humedad = sensorhumedad.objects.all()
+    temperatura = sensortemperatura.objects.all()
+    print(humedad)
+    print(temperatura)
+    contexto ={
+        'sensor':humedad,
+        'sensor':temperatura,
+    }
+    return render(request, 'app/datoscultivo.html',contexto)
 
 def editar(request):
     return render(request, 'app/editar.html')
+
+def vercamaras(request):
+    return render(request, 'app/vercamaras.html')
 
 def perfil(request):
     return render(request, 'app/perfil.html')

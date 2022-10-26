@@ -19,7 +19,7 @@ class sensortemperatura (models.Model):
 class sensorhumedad (models.Model):
     nombre= models.CharField(max_length=45, null=False)
     tiempoderiego= models.IntegerField(null=False)
-    humedadactual= models.IntegerField(null=False)
+    humedadactual= models.IntegerField(null=True)
             
     def _str_(self):
         return "%s" % (self.nombre)
@@ -37,14 +37,37 @@ class camaras (models.Model):
     class Meta:
         app_label= 'app'
 
+class administrador (models.Model):
+    numerocultivos= models.IntegerField(null=False)
 
+    user = models.OneToOneField(
+        User,
+        related_name='administrador',
+        null=True,
+        primary_key=False,
+        on_delete=models.PROTECT
+    )
+    
+
+    def _str_(self):
+        return "%s %s" % (self.user)
+
+    class Meta:
+        app_label= 'app'
 
 
 class cultivo (models.Model):
     nombre= models.CharField(max_length=45, null=False)
-
     fecha=models.DateField(auto_now=False, auto_now_add=False, null=True)
     localidad=models.CharField(max_length=45, null=True)
+
+
+    administrador= models.ForeignKey(
+        administrador,
+        related_name='administrador',
+        null=True,
+        on_delete=models.PROTECT
+    )
 
     sensortemperatura= models.ForeignKey(sensortemperatura,
         related_name='sensor_temperatura',
@@ -68,28 +91,3 @@ class cultivo (models.Model):
     class Meta:
         app_label= 'app'
 
-
-
-class administrador (models.Model):
-    numerocultivos= models.IntegerField(null=False)
-
-    user = models.OneToOneField(
-        User,
-        related_name='administrador',
-        null=True,
-        primary_key=False,
-        on_delete=models.PROTECT
-    )
-    cultivos= models.ForeignKey(
-        cultivo,
-        related_name='cultivo',
-        null=False,
-        on_delete=models.PROTECT
-    )
-    
-
-    def _str_(self):
-        return "%s %s" % (self.user)
-
-    class Meta:
-        app_label= 'app'
