@@ -28,11 +28,10 @@ def autenticar(request):
 
     # Verifica si el usuario existe en la base de datos
     
-    if usuario:
+    if usuario is not None:
+        print('guoapoooo')
         # Inicia la sesión del usuario en el sistema
-        response_data=[loggedin]=True
-        response_data=[msg]='registrado'
-        #login(request, usuario)
+        login(request, usuario)
         return redirect('app:dashboard')
 
     else:
@@ -42,8 +41,39 @@ def autenticar(request):
 def crearusuario(request):
     return render(request, 'app/crearusuario.html')
 
+
+def crearusuario2(request):
+    try:
+        
+        nombre = request.POST['nombre1']
+        user = request.POST['username1']
+        email2 = request.POST['email1']
+        pass2 = request.POST['pass1']
+        rpass2 = request.POST['rpass1']
+
+        u = User()
+        u.first_name = nombre
+        u.username = user
+        u.email = email2
+        u.password = rpass2
+        u.save()
+
+        return redirect('app:ingresar')
+    except Exception as e:
+        print(e)
+        return render(request,'app/ingresar.html')
+
 def dashboard(request):
     return render(request, 'app/dashboard.html')
+
+
+def dashboard2(request):
+    lista22 = cultivo.objects.all()
+    print(lista22)
+    contexto ={
+        'listadecultivos':lista22,
+    }
+    return render(request, 'app/dashboard.html',contexto)
 
 def crearcultivo(request):
     return render(request, 'app/crearcultivo.html')

@@ -34,20 +34,14 @@
                     </tr>
                   </thead>
                   <tbody>
-
+                    {%for lista22  in listadecultivos%}
                     <tr class="fila"> 
-                      <td>cultivo 1</td>
-                      <td>202022</td>
-                      <td>funza</td>
-                      <td><a href="{% url 'app:datoscultivo' %}"  class="cr">Consultar</a></td>
+                      <td>{{lista22.nombre}}</td>
+                      <td>{{lista22.fecha}}</td>
+                      <td>{{lista22.localidad}}</td>
+                      <td><a href="{% url 'app:datoscultivo' %}"  class="buton">Ver</a></td>
                     </tr>
-                    <tr class="fila"> 
-                      <td>cultivo 2</td>
-                      <td>202023</td>
-                      <td>madrid</td>
-                      <td><a href="{% url 'app:datoscultivo' %}"  class="cr">Consultar</a></td>
-                    </tr>
-
+                    {% endfor %}
                   </tbody>
                 </table>
                         <br>

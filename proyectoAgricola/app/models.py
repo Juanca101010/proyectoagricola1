@@ -19,7 +19,8 @@ class sensortemperatura (models.Model):
 class sensorhumedad (models.Model):
     nombre= models.CharField(max_length=45, null=False)
     tiempoderiego= models.IntegerField(null=False)
-
+    humedadactual= models.IntegerField(null=False)
+            
     def _str_(self):
         return "%s" % (self.nombre)
 
