@@ -24,7 +24,8 @@
     <BR>
     <h3>nombre #</h1>
     <br>
-    <form action="">
+    <form action="{% url 'app:editar' %}" method="POST" id="formu">
+      {% csrf_token %}
       <h2>Configuración de riego (Tiempo)</h2>
       <input type="time" name="tiempo">
       <br><br>

@@ -21,7 +21,7 @@
     <br><br>
     <h2>Nuevo Cultivo</h2>
     <br><br>
-    <form action="{% url 'app:crearcultivo2' %}" method="POST" id="formu">
+    <form action="{% url 'app:crearcultivo' %}" method="POST" id="formu">
       {% csrf_token %}
       <h2>Nombre: </h2>
       <input type="text" id="nombre1" name="nombre1">

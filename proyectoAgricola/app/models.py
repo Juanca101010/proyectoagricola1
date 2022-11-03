@@ -58,30 +58,30 @@ class administrador (models.Model):
 
 class cultivo (models.Model):
     nombre= models.CharField(max_length=45, null=False)
-    fecha=models.DateField(auto_now=False, auto_now_add=False, null=True)
-    localidad=models.CharField(max_length=45, null=True)
+    fecha=models.DateField(auto_now=False, auto_now_add=False, null=False)
+    localidad=models.CharField(max_length=45, null=False)
 
 
     administrador= models.ForeignKey(
         administrador,
         related_name='administrador',
-        null=True,
+        null=False,
         on_delete=models.PROTECT
     )
 
     sensortemperatura= models.ForeignKey(sensortemperatura,
         related_name='sensor_temperatura',
-        null=True,
+        null=False,
         on_delete=models.PROTECT
     )
     sensorhumedad= models.ForeignKey(sensorhumedad,
         related_name='sensor_humedad',
-        null=True,
+        null=False,
         on_delete=models.PROTECT
     )
     camarasid= models.ForeignKey(camaras,
         related_name='camaras',
-        null=True,
+        null=False,
         on_delete=models.PROTECT
     )
 

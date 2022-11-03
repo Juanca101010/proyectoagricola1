@@ -71,9 +71,6 @@ def crearusuario2(request):
         print(e)
         return render(request,'app/ingresar.html')
 
-# def dashboard(request):
-#     print("HOSADSAD")
-#     return render(request, 'app/dashboard.html')
 
 
 def dashboard(request):
@@ -122,10 +119,39 @@ def datoscultivo(request):
     return render(request, 'app/datoscultivo.html',contexto)
 
 def editar(request):
-    return render(request, 'app/editar.html')
+    return render(request, 'app/editar.html')\
+
+def editar2(request):
+    try:
+        
+        tiempo = request.POST['tiempo']
+        tmax= request.POST['tmax']
+        tmin = request.POST['tmin']
+
+        sh = sensorhumedad()
+        st = sensortemperatura()
+
+        sh.tiempoderiego = tiempo
+        st.tempmax = tmax
+        st.tempmin = tmin
+        sh.save()
+        st.save()
+
+        return redirect('app:datoscultivo')
+    except Exception as e:
+        print(e)
+        return render(request,'app/datoscultivo.html')
 
 def vercamaras(request):
     return render(request, 'app/vercamaras.html')
 
 def perfil(request):
-    return render(request, 'app/perfil.html')
+    id_usuario=request.user.id
+    admin=administrador.objects.get(user_id=id_usuario)
+    usuario = User.objects.all(user_id = id_usuario)
+
+    contexto ={
+        'datosusuario':usuario,
+        'datosadmin':admin,
+    }
+    return render(request, 'app/perfil.html',contexto)

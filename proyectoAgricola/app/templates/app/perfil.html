@@ -33,13 +33,13 @@
                     </tr>
                   </thead>
                   <tbody>
+                    {%for usuario  in datousuario%}
                     <tr class="fila"> 
-                      <td>juan meza</td>
-                      <td>juanmeza@gmail</td>
-                      <td></td>
-                      <td><a href=""  class="cr">Editar</a></td>
-                      <td><a href=""  class="cr">Eliminar</a></td>
-                    </tr>   
+                      <td>{{usuario.nombre}}</td>
+                      <td>{{usuario.Email}}</td>
+                      <td><a href="{% url 'app:datoscultivo' %}"  class="buton">Ver</a></td>
+                    </tr>
+                    {% endfor %}  
                   </tbody>
                 </table>
                         <br>
